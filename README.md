@@ -6,12 +6,18 @@
 ## 下面是每一章的知识总结
 ### 3.决策树
 #### 3.1. 计算以2为底的对数 
+    ```python
     math.log(n,2)
+    ```
 #### 3.2. 删除mat或array某一列  
+    ```python
     np.delete(a,index,axis = 1) index可取值[1,2]或3 axis=0／1表示删除行／列
+    ```
 #### 3.3. 找到list中出现次数最多的元素 
+    ```python
     from collections import Counter
-    most_label = Counter(list).most_common(1) 参数i表示从出现最多的元素开始，取I个
+    most_label = Counter(list).most_common(i) 参数i表示从出现最多的元素开始，取i个
+    ```
 #### 3.4. matplotlib注解
     annotate('注释内容’,xy,xytext=None,xycoords=‘data’,textcoords=‘data’,arrowprops=None,**kwargs)
     其中，xy:表示被注释点的位置。xytext:注释文本的坐标位置。 
@@ -20,9 +26,13 @@
     
 ### 5.Logistci回归
 #### 5.1. 构造等差数列  
+    ```python
     np.arange(-4,4,0.1)
+    ```
 #### 5.2. 用matplotlib画散点图时，函数scatter()中的参数marker用于设置点的形状
 #### 5.3. 用matplotlib画图的模版代码：
+        ```python
+        
         import matplotlib.pyplot as plt
         fig = plt.figure()
         Ax = fig.add_subplot(111)
@@ -31,18 +41,24 @@
         plt.xlabel("x”)
         plt.ylabel(“y”)
         Plt.show()  
-#### 5.4. 随机生成指定范围内的整数  
+        ```
+#### 5.4. 随机生成指定范围内的整数 
+    ```python
     random.randint(a,b)
+    ```
 #### 5.5. 从list中删除指定下表的元素  
+```python
     del list[1:3]   // del list[1]
+```
 
 ### 8
-8.1
+#### 8.1 线性回归
 
-1. 画散点图
-       import matplotlib.pyplot as plt
-       plt.scatter(x,y,color="r")]
-
+##### 8.1.1. 画散点图
+        ```python
+        import matplotlib.pyplot as plt
+        plt.scatter(x,y,color="r")]
+        ```
 
 8.3 局部加权线性回归
 
