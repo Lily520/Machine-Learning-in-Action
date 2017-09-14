@@ -102,8 +102,9 @@
 
 
 #### 8.6.2. 将列表或array随机打乱,若是多维的，只针对第一维按行打乱 
+```python
      np.random.shuffle(a) 
-
+```
 #### 8.6.3. 将数据标准化后求出回归系数w。将回归系数w还原
      w_origin = w/var(X)  #X包括测试数据和训练数据，且不含有全为1的一列
      constant = sum(mean(X,0),w_origin) + mean(y) #常数项
