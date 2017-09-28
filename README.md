@@ -51,7 +51,7 @@
     del list[1:3]   // del list[1]
 ```
 ### 6.SVM
-#### np.nonzero(data)函数
+#### 6.1 np.nonzero(data)函数
 返回data中不为0的元素的行、列索引。返回结果是含有2个元素的tuple，每个元素都是array类型，分别代表行索引、列索引。
 
 ### 8.预测数值型数据：回归
