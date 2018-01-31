@@ -4,6 +4,53 @@
 这是我学习《机器学习实战》时的学习笔记和代码实现。
 
 ## 下面是每一章的知识总结
+### 2.kNN(k近邻)
+#### 2.1.求list中出现次数最多的元素
+    方法一：
+ ```python
+from collections import Counter
+words = [
+    'look', 'into', 'my', 'eyes', 'look', 'into', 'my', 'eyes',
+    'the', 'eyes', 'the', 'eyes', 'the', 'eyes', 'not', 'around', 'the',
+    'eyes', "don't", 'look', 'around', 'the', 'eyes', 'look', 'into',
+    'my', 'eyes', "you're", 'under'
+]
+
+most_element = Counter(words).most_common(1)
+print(most_element)
+```
+    方法二：
+```python
+import operator
+words = [
+    'look', 'into', 'my', 'eyes', 'look', 'into', 'my', 'eyes',
+    'the', 'eyes', 'the', 'eyes', 'the', 'eyes', 'not', 'around', 'the',
+    'eyes', "don't", 'look', 'around', 'the', 'eyes', 'look', 'into',
+    'my', 'eyes', "you're", 'under'
+]
+
+dict_num = {i:words.count(i) for i in set(words)}
+dict_sort = sorted(dict_num.items(),key=operator.itemgetter(1),reverse=True) #从大到小排序
+print(dict_sort[0][0])
+```
+
+#### 2.2.np.tile(A,B):
+若B为int型：在列方向上将A重复B次
+若B为元组(m,n):将A在列方向上重复n次，在行方向上重复m次
+
+#### 2.3.sum(axis=1)函数的axis参数
+axis=0:按列相加
+axis=1:按行的方向相加，即每行数据求和
+
+#### 2.4.argsort:
+将数组的值按从小到大排序后，输出索引值
+
+#### 2.5.min/max(axis=0)
+axis=0:求每一列的最小／大值
+axis=1:求每一行的最小／大值
+
+
+
 ### 3.决策树
 #### 3.1. 计算以2为底的对数 
 ```python
@@ -23,7 +70,10 @@
     其中，xy:表示被注释点的位置。xytext:注释文本的坐标位置。 
     arrowprops:表示连接数据点和注释的箭头的类型，该参数为dict类型，该参数有一个名为arrowstyle的键
     xycoords,textcoords:字符串，指示xy,xytext的坐标关系。
-    
+  
+  
+  
+  
 ### 5.Logistci回归
 #### 5.1. 构造等差数列  
 ```python
@@ -50,9 +100,16 @@
 ```python
     del list[1:3]   // del list[1]
 ```
+
+
+
+
 ### 6.SVM
 #### 6.1 np.nonzero(data)函数
 返回data中不为0的元素的行、列索引。返回结果是含有2个元素的tuple，每个元素都是array类型，分别代表行索引、列索引。
+
+
+
 
 ### 8.预测数值型数据：回归
 #### 8.1 线性回归
